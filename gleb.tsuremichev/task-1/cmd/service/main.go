@@ -6,18 +6,17 @@ func main() {
 	var num1 int
 	var num2 int
 	var operator string
-	_, err := fmt.Scanln(&num1)
+	_, err := fmt.Scan(&num1)
 	if err != nil {
 		fmt.Println("Invalid first operand")
 		return
 	}
-	_, err = fmt.Scanln(&num2)
+	_, err = fmt.Scan(&num2)
 	if err != nil {
 		fmt.Println("Invalid second operand")
 		return
 	}
-	_, err = fmt.Scanln(&operator)
-
+	_, _ = fmt.Scan(&operator)
 	switch operator {
 	case "+":
 		fmt.Println(num1 + num2)
@@ -34,5 +33,4 @@ func main() {
 	default:
 		fmt.Println("Invalid operation")
 	}
-
 }
