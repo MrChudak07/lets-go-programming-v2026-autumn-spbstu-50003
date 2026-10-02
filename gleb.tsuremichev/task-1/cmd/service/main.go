@@ -4,31 +4,35 @@ import "fmt"
 
 func main() {
 	var (
-		num1     int
-		num2     int
+		a        int
+		b        int
 		operator string
 	)
-	_, err := fmt.Scan(&num1)
+	_, err := fmt.Scan(&a)
 	if err != nil {
 		fmt.Println("Invalid first operand")
 		return
 	}
-	_, err = fmt.Scan(&num2)
+	_, err = fmt.Scan(&b)
 	if err != nil {
 		fmt.Println("Invalid second operand")
 		return
 	}
-	_, _ = fmt.Scan(&operator)
+	_, err = fmt.Scan(&operator)
+	if err != nil {
+		fmt.Println("Invalid operator")
+		return
+	}
 	switch operator {
 	case "+":
-		fmt.Println(num1 + num2)
+		fmt.Println(a + b)
 	case "-":
-		fmt.Println(num1 - num2)
+		fmt.Println(a - b)
 	case "*":
-		fmt.Println(num1 * num2)
+		fmt.Println(a * b)
 	case "/":
-		if num2 != 0 {
-			fmt.Println(num1 / num2)
+		if b != 0 {
+			fmt.Println(a / b)
 		} else {
 			fmt.Println("Division by zero")
 		}
